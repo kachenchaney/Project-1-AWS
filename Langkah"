@@ -1,0 +1,38 @@
+sudo yum update
+sudo yum install httpd.x86_64
+sudo yum install git
+sudo service httpd start
+cd /var/www/html
+sudo git clone https://github.com/kachenchaney/wes-paling-anyar.git
+lsblk
+sudo mkfs -t xfs /dev/xvdb
+cd /mnt/efs/fs1
+sudo mkdir /aws
+sudo mount /dev/xvdb /aws
+sudo nano /aws/testaws.txt
+cat /aws/testaws.txt
+sudo mkdir /mnt/efs/fs1/aws
+cd /mnt/efs/fs1
+
+#ngge debian karek di walek yo knek s
+sudo apt install xfsprogs
+sudo mkfs -t xfs /dev/xvdb
+cd /mnt/efs/fs1
+cd /, kudu neng njobo
+mkdir debian
+sudo mount /dev/xvdb /debian
+sudo nano /debian/testdebian.txt
+cat /debian/testdebian.txt
+
+lsblk keduanya
+
+#smisal debian e sek
+sudo su
+apt update
+apt install apache2
+apt install git
+apt install unzip
+cd /var/www/html
+git clone https://github.com/kachenchaney/wes-paling-anyar.git
+
+cp -r LICENSE.txt READ-ME.txt about.html blog.html cctv-website-template.jpg contact.html css detail.html img index.html js lib price.html script.js scss service.html team.html testimonial.html /var/www/html
